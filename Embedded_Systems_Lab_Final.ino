@@ -7,14 +7,6 @@ LiquidCrystal LCD = LiquidCrystal(12, 11, 2, 3, 4, 5);  //Create Liquid Crystal 
 #define ledpinyellow 9
 #define ledpingreen 10
 
-void delay10us() {
-  TCNT0 = -160;  
-  TCCR0A = 0x0;   //Normal Mode
-  TCCR0B = 0x01;  //Internal clock, no prescaler
-  while((TIFR0 &1)==0);
-  TIFR0=1; // clears TOV0
- }
-
   
   
 void delayms(int n){
